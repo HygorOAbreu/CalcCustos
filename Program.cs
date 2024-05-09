@@ -1,9 +1,9 @@
 ﻿using System;
-//using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Globalization;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CalcCustos
 {
@@ -30,6 +30,9 @@ namespace CalcCustos
 
             decimal equipamentos = QtdEquipamentos * 350;
             Console.WriteLine($"Valor total dos Equipamentos {equipamentos.ToString("C", CultureInfo.GetCultureInfo("pt-br"))}\n");
+
+            Console.WriteLine("Precione qualquer tecla para finalizar");
+            Console.ReadLine();
 
         }
     }
