@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CalcCustos.Models
 {
-    internal class Calcs
+    internal class CalculoDeCustoDeTrabalho
     {       
         private decimal Km {get; set;}
         private decimal HoraTecnica {get; set;}
