@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalcCustos.Models;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -11,28 +12,60 @@ namespace CalcCustos
     {
         static void Main(string[] args)
         {
+            // Coloca o encoding para UTF8 para exibir acentuação
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            Console.WriteLine("Digite a Quantidade de KMs");
-            decimal km = decimal.Parse(Console.ReadLine());
-            Console.WriteLine("Digite a Quantidade de Horas Técnicas");
-            decimal horatecnica = decimal.Parse(Console.ReadLine());
-            Console.WriteLine("Digite a Quantidade de Equipamentos");
-            decimal QtdEquipamentos = decimal.Parse(Console.ReadLine());
-            Console.WriteLine("Digite a Quantidade de Técnicos");
-            decimal QtdTecnicos = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("Seja bem vindo ao sistema de controles e orçamentos internos!\n" +
+                              "Digite o preço inicial:");
 
-            decimal Quilometros = (km / 13.5M) * 5.40M;
-            Console.WriteLine($"o valor Gasto {Quilometros.ToString("C", CultureInfo.GetCultureInfo("pt-br"))}\n");
+            string opcao = string.Empty;
+            bool exibirMenu = true;
 
-            decimal tecnica = horatecnica * QtdTecnicos * 71;
-            Console.WriteLine($"Valor da Hora Técnica {tecnica.ToString("C", CultureInfo.GetCultureInfo("pt-br"))}\n");
+            // Realiza o loop do menu
+            while (exibirMenu)
+            {
+                Console.Clear();
+                Console.WriteLine("Digite a sua opção:");
+                Console.WriteLine("1 - Orçamento tecníco");
+                Console.WriteLine("2 - em dev");
+                Console.WriteLine("3 - em dev");
+                Console.WriteLine("4 - Encerrar");
 
-            decimal equipamentos = QtdEquipamentos * 350;
-            Console.WriteLine($"Valor total dos Equipamentos {equipamentos.ToString("C", CultureInfo.GetCultureInfo("pt-br"))}\n");
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        Console.Clear();
+                        Console.WriteLine("1 - Orçamento tecníco");
+                        var calc = new Calcs();
+                        calc.Valores();
+                        calc.Calculos();
+                        break;
 
-            Console.WriteLine("Precione qualquer tecla para finalizar");
-            Console.ReadLine();
+                    case "2":
+                        Console.Clear();
+                        Console.WriteLine("2 - em dev");
+                        break;
+
+                    case "3":
+                        Console.Clear();
+                        Console.WriteLine("2 - em dev");
+                        break;
+
+                    case "4":
+                        exibirMenu = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Opção inválida");
+                        break;
+                }
+
+                Console.WriteLine("Pressione uma tecla para continuar");
+                Console.ReadLine();
+            }
+
+            Console.WriteLine("O programa se encerrou");
+
 
         }
     }
