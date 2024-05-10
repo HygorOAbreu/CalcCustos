@@ -36,7 +36,7 @@ namespace CalcCustos
                     case "1":
                         Console.Clear();
                         Console.WriteLine("1 - Orçamento tecníco");
-                        var calc = new Calcs();
+                        var calc = new Calcs();                        
                         calc.Valores();
                         calc.Calculos();
                         break;
