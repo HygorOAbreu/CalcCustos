@@ -34,10 +34,12 @@ namespace CalcCustos
                 switch (Console.ReadLine())
                 {
                     case "1":
+                        //Limpa a tela sempre após selecionar uma opção.
                         Console.Clear();
                         Console.WriteLine("1 - Orçamento tecníco");
+                        //Inicializa a classe que absorve os valores e executa os cálculo.
                         var calc = new CalculoDeCustoDeTrabalho();                        
-                        calc.Valores();
+                        calc.Valores();                        
                         calc.Calculos();
                         break;
 
@@ -52,18 +54,20 @@ namespace CalcCustos
                         break;
 
                     case "4":
+                        //encessa a aplicação.
                         exibirMenu = false;
                         break;
 
                     default:
+                        //caso a opção selecionada não seja valida, envia uma mensagem de erro e solicita nova informação.
                         Console.WriteLine("Opção inválida");
                         break;
                 }
-
+                //sempre ao termino de uma atividade o sistema retorna para o menu.
                 Console.WriteLine("Pressione uma tecla para continuar");
                 Console.ReadLine();
             }
-
+            // mensagem de aviso de encerramento da aplicação.
             Console.WriteLine("O programa se encerrou");
 
 
